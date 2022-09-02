@@ -3,11 +3,9 @@ You are playing a game with integers. You start with the integer 1 and you want 
 */
 
 int minMoves(int target, int maxDoubles) {
-    if (target <= 1) {
-        return 0;
-    }
+    if (target == 1 || target < 1) return 0;
     else {
-        if ((maxDoubles >= 1) && (target/2 >= 1)) {
+        if ((maxDoubles > 0) && (target % 2 == 0)) {
             return 1 + minMoves(target/2, maxDoubles-1);
         }
         else {
